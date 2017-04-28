@@ -1,6 +1,8 @@
 #!groovy
 
 node {
+    def rtGradle = Artifactory.newGradleBuild()
+
     stage 'clone sources'
     git url: 'https://github.com/mtraina/jenkins-pipeline-sample.git'
 
