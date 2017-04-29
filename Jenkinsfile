@@ -11,7 +11,7 @@ node {
     sh "java -jar build/libs/jenkins-pipeline-sample-0.0.1-SNAPSHOT.jar"
 
     stage 'test endpoint'
-    sh "response=\$(curl http://localhost:8080/greeting"
+    sh "response=\$(curl http://localhost:9080/greeting"
 
     stage 'compare response'
     echo 'to be implemented'
