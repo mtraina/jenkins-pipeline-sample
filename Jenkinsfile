@@ -8,10 +8,10 @@ node {
     sh "./gradlew clean build"
 
     stage 'run application'
-    sh "java -jar build/libs/jenkins-pipeline-sample-0.0.1-SNAPSHOT.jar"
+    sh "java -jar build/libs/jenkins-pipeline-sample-0.0.1-SNAPSHOT.jar &"
 
     stage 'test endpoint'
-    sh "response=\$(curl http://localhost:9080/greeting"
+    sh "result=\$(curl http://localhost:9080/greeting)"
 
     stage 'compare response'
     echo 'to be implemented'
