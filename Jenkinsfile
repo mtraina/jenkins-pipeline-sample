@@ -5,7 +5,12 @@ node {
     git url: 'https://github.com/mtraina/jenkins-pipeline-sample.git'
 
     stage 'gradle build'
-    sh "./gradlew clean build"
+    try {
+        sh "./gradlew clean build"
+    }
+    finally {
+        junit '**/build/test-results/test/*.xml'
+    }
 
     stage 'run application'
     sh "java -jar build/libs/jenkins-pipeline-sample-0.0.1-SNAPSHOT.jar &"
