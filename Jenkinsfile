@@ -17,6 +17,11 @@ node {
 
     stage 'run application'
     sh "java -jar build/libs/jenkins-pipeline-sample-0.0.1-SNAPSHOT.jar &"
+    waitUntil {
+        def r = sh script: 'curl http://localhost:9080/greeting', returnStatus: true
+        echo 'returned' + r
+        return r == 0
+    }
 
     stage 'test endpoint'
     sh "result=\$(curl http://localhost:9080/greeting)"
