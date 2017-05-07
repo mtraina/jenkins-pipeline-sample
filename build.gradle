@@ -14,7 +14,7 @@ apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 
 jar {
-	baseName = 'jenkins-pipeline-samples'
+	baseName = 'jenkins-pipeline-sample'
 	version = '0.0.1-SNAPSHOT'
 }
 
