@@ -13,7 +13,7 @@ node {
     }
 
     stage 'kill deployed application'
-    sh 'kill -9 $(cat application.pid)'
+    sh 'kill -9 $(cat application.pid) || true'
 
     stage 'run application'
     sh "java -jar build/libs/jenkins-pipeline-sample-0.0.1-SNAPSHOT.jar &"
