@@ -6,11 +6,14 @@ node {
 
     stage 'gradle build'
     try {
-        sh "./gradlew clean build"
+        sh "./gradlew clean build --continue"
     }
     finally {
         junit '**/build/test-results/test/*.xml'
     }
+
+    stage 'kill deployed application'
+    sh 'kill -9 $(cat application.pid)'
 
     stage 'run application'
     sh "java -jar build/libs/jenkins-pipeline-sample-0.0.1-SNAPSHOT.jar &"

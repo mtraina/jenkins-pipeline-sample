@@ -15,6 +15,6 @@ public class HelloControllerTest {
     @Test
     public void should() throws Exception {
         final MvcResult mvcResult = mockMvc.perform(get("/greeting")).andReturn();
-        assertThat(mvcResult.getResponse().getContentAsString()).isEqualTo("{\"text\":\"hello world2\"}");
+        assertThat(mvcResult.getResponse().getContentAsString()).isEqualTo("{\"text\":\"hello world\"}");
     }
 }
