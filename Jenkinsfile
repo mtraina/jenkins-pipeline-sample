@@ -19,7 +19,7 @@ node {
     sh "java -jar build/libs/jenkins-pipeline-sample-0.0.1-SNAPSHOT.jar &"
     waitUntil {
         def r = sh script: 'curl http://localhost:9080/greeting', returnStatus: true
-        echo 'returned' + r
+        echo 'returned = ' + r
         return r == 0
     }
 
@@ -27,5 +27,6 @@ node {
     sh "result=\$(curl http://localhost:9080/greeting)"
 
     stage 'compare response'
-    echo 'result == {"text":"hello world2"}'
+    echo '$result'
+    sh '$result = {"text":"hello world2"}'
 }
