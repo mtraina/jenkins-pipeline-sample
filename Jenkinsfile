@@ -29,5 +29,5 @@ node {
 
     stage 'compare response'
     echo "result is: $result"
-    return result == "{\"text\":\"hello world\"}"
+    return result == "{\"text\":\"hello world2\"}"
 }
