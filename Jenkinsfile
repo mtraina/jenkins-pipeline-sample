@@ -25,8 +25,9 @@ node {
 
     stage 'test endpoint'
     sh "result=\$(curl http://localhost:9080/greeting)"
+    echo '$result'
 
     stage 'compare response'
     echo '$result'
-    sh '$result = {"text":"hello world2"}'
+    sh '$result = {"text":"hello world"}'
 }
