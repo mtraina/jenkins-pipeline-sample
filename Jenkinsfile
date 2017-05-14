@@ -24,10 +24,10 @@ node {
     }
 
     stage 'test endpoint'
-    sh "result=\$(curl http://localhost:9080/greeting)"
-    echo '$result'
+    def result = sh(script: "result=\$(curl http://localhost:9080/greeting)", returnStdout: true).trim()
+    echo "result is: $result"
 
     stage 'compare response'
-    echo '$result'
-    sh '$result = {"text":"hello world"}'
+    echo "result is: $result"
+    sh "$result = {"text":"hello world"}"
 }
