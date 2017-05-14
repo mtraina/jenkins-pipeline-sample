@@ -27,8 +27,5 @@ node {
     sh "result=\$(curl http://localhost:9080/greeting)"
 
     stage 'compare response'
-    echo 'to be implemented'
-
-    stage 'kill application'
-    echo 'to be implemented'
+    echo 'result = {"text":"hello world"}'
 }
