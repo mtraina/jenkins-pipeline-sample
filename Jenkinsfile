@@ -27,5 +27,5 @@ node {
     sh "result=\$(curl http://localhost:9080/greeting)"
 
     stage 'compare response'
-    echo 'result = {"text":"hello world"}'
+    echo 'result = {"text":"hello world2"}'
 }
